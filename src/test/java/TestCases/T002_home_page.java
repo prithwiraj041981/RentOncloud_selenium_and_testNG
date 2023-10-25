@@ -17,7 +17,7 @@ import io.cucumber.java.en.When;
 /* this class is developed for Home page */
 public class T002_home_page extends TestBase{
 	/* this code is developed for loading browser and ROC Login */
-	@Given("User is on ROCLogin page for Home page")
+	
 	@BeforeClass
 	
 	public void launchBrowser() throws IOException {
@@ -26,7 +26,7 @@ public class T002_home_page extends TestBase{
 		tbase.Base_url();
 	}
 	/* this code is developed for Home page validation */
-	 @When("User enters username and password for Home page")
+	 
 	@Test(description="This is Home page validate")
 	
 	public void Validate() throws IOException {

@@ -18,7 +18,7 @@ public class HomePage extends TestBase {
 	
 
 
-	public static final long TIMEOUT = 30;
+	public static final long TIMEOUT = 5000;
 	
 	public static String Usernamefromexcel;
 	public static String passwordfromexcel;
@@ -46,6 +46,12 @@ public class HomePage extends TestBase {
 
 	@FindBy(xpath = "//a[contains(text(),'View My Webpage')]")
 	WebElement Activate_webpage;
+	
+	@FindBy(xpath = "//a[contains(text(),'Find Home')]")
+	WebElement findhome;
+	
+	@FindBy(xpath = "//button[contains(text(),'Activate Webpage')]")
+	WebElement Find_Activate_webpage;
 
 	/*identifying home page text and home page dashboard */
 	public void HomePageButtons() throws IOException{
@@ -56,6 +62,46 @@ public class HomePage extends TestBase {
 			if(homepagebuttons) {
 				
 				System.out.println("Home page has Update Profile and Activate webpage buttons");	
+				logger.log(Status.PASS, MarkupHelper.createLabel(" User has has Update Profile and Activate webpage buttons", ExtentColor.GREEN));
+			}
+		
+
+		} catch(Exception e) {
+
+			System.out.println("User is not in Home page.");
+			
+			
+		}
+		}
+	
+	public void HomePageButtonsrenter() throws IOException{
+
+		try {
+			Boolean homepagebuttons=Update_Profile.isDisplayed() && findhome.isDisplayed();
+			System.out.println(homepagebuttons);
+			if(homepagebuttons) {
+				
+				System.out.println("Home page has Update Profile and findhome buttons");	
+				logger.log(Status.PASS, MarkupHelper.createLabel(" User has has Update Profile and Activate webpage buttons", ExtentColor.GREEN));
+			}
+		
+
+		} catch(Exception e) {
+
+			System.out.println("User is not in Home page.");
+			
+			
+		}
+		}
+	
+	public void HomePageButtonstradesman() throws IOException{
+
+		try {
+			Boolean homepagebuttons=Update_Profile.isDisplayed() && Find_Activate_webpage.isDisplayed();
+			System.out.println(homepagebuttons);
+			if(homepagebuttons) {
+				
+				System.out.println("Home page has Update Profile and findhome buttons");	
 				logger.log(Status.PASS, MarkupHelper.createLabel(" User has has Update Profile and Activate webpage buttons", ExtentColor.GREEN));
 			}
 		

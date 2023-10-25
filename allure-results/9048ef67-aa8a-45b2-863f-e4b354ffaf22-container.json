@@ -1,0 +1,1 @@
+{"uuid":"9048ef67-aa8a-45b2-863f-e4b354ffaf22","name":"Base.TestBase.register","children":["5391f9fb-4b80-402e-a6f7-6bdfbd881745"],"description":"","befores":[{"name":"register","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1695007588145,"stop":1695007588145}],"afters":[],"start":1695007588145,"stop":1695007588145}

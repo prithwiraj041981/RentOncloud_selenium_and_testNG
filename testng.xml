@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-  <test name = "First Test"> 
-<classes> 
-     <class name="TestCases.LoginTest"/> 
-</classes> 
-</test> 
-<test name = "Second Test"> 
-<classes> 
-     <class name="TestCases.HomepageTest"/> 
-</classes> 
-</test> 
-</suite> <!-- Suite -->
+<suite name="Suite" parallel="false">
+  <test  name="Test">
+    <classes>
+      <class name="TestCases.T001_login_page"/>
+      <class name="TestCases.T002_home_page"/>
+      <class name="TestCases.T003_add_property_page"/>
+      <class name="TestCases.T004_Add_new_user_page"/>
+      <class name="TestCases.T005_add_agreement_page"/>
+      <class name="TestCases.T006_add_document_page"/>
+      <class name="TestCases.T007_add_Transaction_page"/>
+      <class name="TestCases.T008_add_deposit_page"/>
+      <class name="TestCases.T009_add_task_page"/>
+      <class name="TestCases.T010_settings_page"/>
+      <class name="TestCases.T011_chart_of_account_page"/>
+      <class name="TestCases.T012_create_invoice_page"/>
+      <class name="TestCases.T013_User_role_page"/>
+      <class name="TestCases.T014_Renter_Login_Page"/>
+      <class name="TestCases.T015_Renter_Home_Page"/>
+      <class name="TestCases.T016_Renter_My_Rental_Page"/>
+       <class name="TestCases.T017_Renter_Contacts"/>
+       <class name="TestCases.T018_Renter_settings_page"/>
+       <class name="TestCases.T019_RenterUser_Role_Page"/>
+       <class name="TestCases.T020_Tradesman_Login_Page"/>
+       <class name="TestCases.T021_Tradesman_Home_page"/>
+       <class name="TestCases.T022_Tradesman_settings_Page"/>
+       <class name="TestCases.T023_Trademan_User_role_page"/>
+       <class name="TestCases.T024_Tradesman_Add_New_User_Page"/>
+       <class name="TestCases.T025_Tradesman_New_service_Page"/>
+        <class name="TestCases.T026_Tradesman_Find_It_Page"/> 
+        <class name="TestCases.T027_Landlord_Reminder_Page"/>
+        <class name="TestCases.T028_Tradesman_Reminder_Page"/>
+          <class name="TestCases.T029_Renter_Reminder_Page"/> 
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite --><!-- Suite -->

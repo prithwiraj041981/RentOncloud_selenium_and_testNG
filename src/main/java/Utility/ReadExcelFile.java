@@ -49,5 +49,75 @@ public class ReadExcelFile {
 		}
 		return passwordexcel;
 	}
+	public static String RenterReadexcelusername() throws IOException{
+		FileInputStream fs = new FileInputStream(System.getProperty("user.dir") + "/src/main/resources/" + "Test_data.xlsx" );
+		//Creating a workbook
+		@SuppressWarnings("resource")
+		XSSFWorkbook workbook = new XSSFWorkbook(fs);
+		XSSFSheet sheet = workbook.getSheetAt(0);
+		Row row = sheet.getRow(0);
+		@SuppressWarnings("unused")
+		Cell cell = row.getCell(1);
+		String Userrow=sheet.getRow(0).getCell(0).toString();
+		if(Userrow.equalsIgnoreCase("Username")) {
+			usernameexcel=sheet.getRow(2).getCell(0).toString();
+			System.out.println("The userid is:"+" "+usernameexcel);
+		}
+		return usernameexcel;	
+	}
+	
+	public static String RenterReadexcelpassword() throws IOException{
+
+		FileInputStream fs = new FileInputStream(System.getProperty("user.dir") + "/src/main/resources/" + "Test_data.xlsx" );
+		//Creating a workbook
+		@SuppressWarnings("resource")
+		XSSFWorkbook workbook = new XSSFWorkbook(fs);
+		XSSFSheet sheet = workbook.getSheetAt(0);
+		Row row = sheet.getRow(1);
+		@SuppressWarnings("unused")
+		Cell cell = row.getCell(0);
+		String Userrow=sheet.getRow(0).getCell(1).toString();
+		if(Userrow.equalsIgnoreCase("Password")) {
+			passwordexcel=sheet.getRow(2).getCell(1).toString();
+			System.out.println("The password is:"+" "+passwordexcel);
+		}
+		return passwordexcel;
+	}
+	
+	
+	public static String TradesmanReadexcelusername() throws IOException{
+		FileInputStream fs = new FileInputStream(System.getProperty("user.dir") + "/src/main/resources/" + "Test_data.xlsx" );
+		//Creating a workbook
+		@SuppressWarnings("resource")
+		XSSFWorkbook workbook = new XSSFWorkbook(fs);
+		XSSFSheet sheet = workbook.getSheetAt(0);
+		Row row = sheet.getRow(0);
+		@SuppressWarnings("unused")
+		Cell cell = row.getCell(1);
+		String Userrow=sheet.getRow(0).getCell(0).toString();
+		if(Userrow.equalsIgnoreCase("Username")) {
+			usernameexcel=sheet.getRow(3).getCell(0).toString();
+			System.out.println("The userid is:"+" "+usernameexcel);
+		}
+		return usernameexcel;	
+	}
+	
+	public static String TradesmanReadexcelpassword() throws IOException{
+
+		FileInputStream fs = new FileInputStream(System.getProperty("user.dir") + "/src/main/resources/" + "Test_data.xlsx" );
+		//Creating a workbook
+		@SuppressWarnings("resource")
+		XSSFWorkbook workbook = new XSSFWorkbook(fs);
+		XSSFSheet sheet = workbook.getSheetAt(0);
+		Row row = sheet.getRow(1);
+		@SuppressWarnings("unused")
+		Cell cell = row.getCell(0);
+		String Userrow=sheet.getRow(0).getCell(1).toString();
+		if(Userrow.equalsIgnoreCase("Password")) {
+			passwordexcel=sheet.getRow(3).getCell(1).toString();
+			System.out.println("The password is:"+" "+passwordexcel);
+		}
+		return passwordexcel;
+	}
 }
 

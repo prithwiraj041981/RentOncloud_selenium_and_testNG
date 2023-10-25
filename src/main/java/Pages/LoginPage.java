@@ -28,7 +28,7 @@ public class LoginPage extends TestBase{
 
    
 
-	public static final long TIMEOUT = 30;
+	public static final long TIMEOUT = 5000;
 
 	
 	public static String Usernamefromexcel;
@@ -54,6 +54,9 @@ public class LoginPage extends TestBase{
 
 	@FindBy(xpath = "//h2[contains(text(),'Home')]")
 	WebElement homepagename;
+	
+	@FindBy(xpath = "//ol[contains(text(),'Dashboard')]")
+	WebElement homepagedashboard;
 	
 	/* this code is developed for entering to ROC */
 
@@ -94,6 +97,88 @@ public class LoginPage extends TestBase{
 		
 		
 	}
+	
+public void LoginpageforRenter() throws IOException {
+		
+		String Usernamefromexcel=ReadExcelFile.RenterReadexcelusername();
+		username.sendKeys(Usernamefromexcel);
+		logger.log(Status.PASS, MarkupHelper.createLabel(" User has successfully given username", ExtentColor.GREEN));
+		
+		
+		
+		driver.manage().timeouts().implicitlyWait(TIMEOUT, TimeUnit.SECONDS);
+		loginButton.click();
+		logger.log(Status.PASS, MarkupHelper.createLabel(" User has successfully click login button", ExtentColor.GREEN));
+		driver.manage().timeouts().implicitlyWait(TIMEOUT, TimeUnit.SECONDS);
+		String passwordfromexcel=ReadExcelFile.RenterReadexcelpassword();
+		password.sendKeys(passwordfromexcel);
+		logger.log(Status.PASS, MarkupHelper.createLabel(" User has successfully given password", ExtentColor.GREEN));
+		driver.manage().timeouts().implicitlyWait(TIMEOUT, TimeUnit.SECONDS);
+		enterbutton.click();
+		logger.log(Status.PASS, MarkupHelper.createLabel(" User has successfully enter roc", ExtentColor.GREEN));
+		
+		
+		
+		//report.flush();
+	}
+	/* this code is developed for validate to enter to Dashboard */
+	public void DashboardRenterROC() throws IOException {
+		
+		
+		driver.manage().timeouts().implicitlyWait(TIMEOUT, TimeUnit.SECONDS);
+		String homePageHeading = homepagedashboard.getText();
+		driver.manage().timeouts().implicitlyWait(TIMEOUT, TimeUnit.SECONDS);
+		Asserts.check(homePageHeading.equalsIgnoreCase("Dashboard"), homePageHeading);
+		System.out.println("User has successfully logged in");
+		logger.log(Status.PASS, MarkupHelper.createLabel(" User has successfully logged in", ExtentColor.GREEN));
+		
+		
+		
+	}
+	
+	
+public void LoginpageforTradesman() throws IOException {
+		
+		String Usernamefromexcel=ReadExcelFile.TradesmanReadexcelusername();
+		username.sendKeys(Usernamefromexcel);
+		logger.log(Status.PASS, MarkupHelper.createLabel(" User has successfully given username", ExtentColor.GREEN));
+		
+		
+		
+		driver.manage().timeouts().implicitlyWait(TIMEOUT, TimeUnit.SECONDS);
+		loginButton.click();
+		logger.log(Status.PASS, MarkupHelper.createLabel(" User has successfully click login button", ExtentColor.GREEN));
+		driver.manage().timeouts().implicitlyWait(TIMEOUT, TimeUnit.SECONDS);
+		String passwordfromexcel=ReadExcelFile.TradesmanReadexcelpassword();
+		password.sendKeys(passwordfromexcel);
+		logger.log(Status.PASS, MarkupHelper.createLabel(" User has successfully given password", ExtentColor.GREEN));
+		driver.manage().timeouts().implicitlyWait(TIMEOUT, TimeUnit.SECONDS);
+		enterbutton.click();
+		logger.log(Status.PASS, MarkupHelper.createLabel(" User has successfully enter roc", ExtentColor.GREEN));
+		
+		
+		
+		//report.flush();
+	}
+	/* this code is developed for validate to enter to Dashboard */
+	public void DashboardTradesmanROC() throws IOException {
+		
+		
+		driver.manage().timeouts().implicitlyWait(TIMEOUT, TimeUnit.SECONDS);
+		String homePageHeading = homepagedashboard.getText();
+		driver.manage().timeouts().implicitlyWait(TIMEOUT, TimeUnit.SECONDS);
+		Asserts.check(homePageHeading.equalsIgnoreCase("Home"), homePageHeading);
+		System.out.println("User has successfully logged in");
+		logger.log(Status.PASS, MarkupHelper.createLabel(" User has successfully logged in", ExtentColor.GREEN));
+		
+		
+		
+	}
+	
+	
+	
+	
+	
 	
 	
 	public static String capture(WebDriver driver) throws IOException {

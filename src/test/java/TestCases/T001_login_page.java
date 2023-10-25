@@ -20,7 +20,7 @@ public class T001_login_page extends TestBase {
 	
 	/* this code is developed for user creation */
 	/* this code is developed for loading browser and ROC Login */
-	@Given("User is on ROCLogin page")
+	
 	@BeforeClass
 
 	public void launchBrowser() throws IOException {
@@ -33,7 +33,7 @@ public class T001_login_page extends TestBase {
 		
 	}
 	/* this code is developed for validating Login to ROC */
-	@When("User enters username and password")
+	
 	@Test(description="This is login validate")
 	 
 	public void Validate() throws IOException {
